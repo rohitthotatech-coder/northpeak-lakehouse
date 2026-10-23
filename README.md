@@ -27,9 +27,9 @@ Orchestration: Lakeflow Jobs · Deploy: GitHub + Asset Bundles · Governance: Un
 
 | Phase | What I build | Status |
 |---|---|---|
-| 0 | Setup: Free Edition workspace, this repo, Git folder | ⬜ |
-| 1 | Unity Catalog: catalog, schemas, volume as fake S3 | ⬜ |
-| 2 | Simulate AWS sources with synthetic, slightly dirty data | ⬜ |
+| 0 | Setup: Free Edition workspace, this repo, Git folder | ✅ |
+| 1 | Unity Catalog: catalog, schemas, volume as fake S3 | ✅ |
+| 2 | Simulate AWS sources with synthetic, slightly dirty data | ✅|
 | 3 | Auto Loader into bronze (incremental, exactly once) | ⬜ |
 | 4 | Declarative pipeline: bronze → silver → gold | ⬜ |
 | 5 | CDC from the customer database (SCD Type 2) | ⬜ |
