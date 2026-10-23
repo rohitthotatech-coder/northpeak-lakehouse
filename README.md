@@ -54,3 +54,14 @@ tests/                        unit tests
 docs/                         notes and diagrams
 LEARNINGS.md                  what broke, how I fixed it, what I'd say in an interview
 ```
+
+## Schema conversion and type mapping
+
+| Source column | Source type (as received) | Target Delta type | Rule |
+|---|---|---|---|
+| txn_ts | string, 2 formats | TIMESTAMP | try `yyyy-MM-dd HH:mm:ss`, then `dd/MM/yyyy HH:mm` |
+| amount | string, may be blank | DECIMAL(18,2) | never use FLOAT for money |
+| currency | string, mixed case | STRING | `upper()` |
+| customer_id | int (Postgres `integer`) | BIGINT | |
+| ts_ms | epoch milliseconds | TIMESTAMP | `timestamp_millis()` |
+| event_ts | ISO-8601 string | TIMESTAMP | |
